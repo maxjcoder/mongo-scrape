@@ -1,0 +1,20 @@
+{
+  "name": "mongo-scrape",
+  "version": "1.0.0",
+  "description": "Whenever a user visits your site, the app should scrape stories from a news outlet of your choice and display them for the user. Each scraped article should be saved to your application database. At a minimum, the app should scrape and display the following information for each article:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxjcoder/mongo-scrape.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxjcoder/mongo-scrape/issues"
+  },
+  "homepage": "https://github.com/maxjcoder/mongo-scrape#readme"
+}
