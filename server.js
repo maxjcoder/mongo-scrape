@@ -13,6 +13,9 @@ var app = express();
 //express router
 var router = express.Router();
 
+//require routes file; pass router object
+require('./config/routes')(router);
+
 //public folder is a static directory
 app.use(express.static(__dirname + '/public'));
 
@@ -47,5 +50,5 @@ mongoose.connect(db, function(error) {
 
 //Listen on a port
 app.listen(PORT, function() {
-    console.log("Listening on port:" + PORT)
+    console.log('Listening on port:' + PORT)
 });
