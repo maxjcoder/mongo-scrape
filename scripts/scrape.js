@@ -16,10 +16,10 @@ var scrape = function (cb) {
         var articles = [];
 
         //----------Important!!----------
-        
+
         // select a class and on each class, get the story heading and summary; trim cuts off white space
 
-            // --*unsure of the 'class' to use here (perhaps 'story')--
+            // --*unsure of the 'class' to use here* (perhaps 'story')--
         $('.theme-summary').each(function(i, element){
 
                                         // --*unsure of the 'class' to use here* (perhaps 'balancedHeadline')--
