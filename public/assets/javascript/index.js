@@ -66,7 +66,23 @@ panel.data('_id', article._id);
 return panel;
 }
 
-function renderEmpty(){
+function renderEmpty() {
     // uses HTML to alert that there are no articles to veiw
     // joined array (HTML string) vs. using a concatenated string
+    var emptyAlert =
+    $(["<div class='alert alert-warning text-center'>",
+    "<h4>Hey friend. No new articles at the moment, sorry!</h4>",
+    "</div>",
+    "<div class'panel panel-default'>",
+    "<div class'panel-heading text-center'>",
+    "<h3>What would you like to do?</h3>",
+    "</div>",
+    "<div class='panel-body text-center'>",
+    "<h4><a class='scrape-new'>Try Scraping New Articles</a></h4>",
+    "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
+    "</div>",
+    "</div>"
+    ].join(""));
+    //append this data to the webpage
+    articleContainer.append(emptyAlert);
 }
