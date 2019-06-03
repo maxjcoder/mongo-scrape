@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 app.engine('handlebars', expressHandlebars({
     defaultLayout: 'main'
 }));
-app.set('view-engine', 'handlebars');
+app.set('view engine', 'handlebars');
 
 //body parser use in application
 app.use(bodyParser.urlencoded({
