@@ -51,12 +51,12 @@ function createPanel(article) {
     article.headline,
     "<a class='btn btn-success save'>",
     "Save Article",
-    "<a>",
+    "</a>",
     "</h3>",
-    "<div>",
+    "</div>",
     "<div class='panel-body'>",
     article.summary,
-    "<div>",
+    "</div>",
     "</div>"
 ].join(""));
 //attach the article's id to the jQuery element
@@ -64,4 +64,9 @@ function createPanel(article) {
 panel.data('_id', article._id);
 // return the built panel jQuery element
 return panel;
+}
+
+function renderEmpty(){
+    // uses HTML to alert that there are no articles to veiw
+    // joined array (HTML string) vs. using a concatenated string
 }
