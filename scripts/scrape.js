@@ -20,12 +20,12 @@ var scrape = function (cb) {
         // select a class and on each class, get the story heading and summary; trim cuts off white space
 
             // --*unsure of the 'class' to use here* (perhaps 'story')--
-        $('.theme-summary').each(function(i, element){
+        $('.story').each(function(i, element){
 
                                         // --*unsure of the 'class' to use here* (perhaps 'balancedHeadline')--
-            var head = $(this).children('.story-heading').text().trim();
+            var head = $(this).children('.balancedHeadline').text().trim();
                                         // --*unsure of the 'class' to use here* (perhaps 'articleBody')--
-            var sum = $(this).children('.summary').text().trim();
+            var sum = $(this).children('.articleBody').text().trim();
 
         // 'Replace Regex Method' to clean up text with white space
         if(head && sum){

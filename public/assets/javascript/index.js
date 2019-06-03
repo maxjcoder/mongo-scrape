@@ -9,7 +9,7 @@ $(document).ready(function() {
     $(".clear").on("click", handleArticleClear);
   
     function initPage() {
-      // Run an AJAX request for any unsaved headlines
+      // AJAX request for any unsaved headlines
       $.get("/api/headlines?saved=false").then(function(data) {
         articleContainer.empty();
         // If we have headlines, render them to the page

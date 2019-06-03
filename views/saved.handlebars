@@ -1,11 +1,21 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid" style="background-color: #2196f3;">
-        <div class="navbar-header">
-            <a class="navbar-brand" style="font-weight:bold; color: white;" href="/">Saved Articles</a>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Mongo Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/saved">Saved Articles <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+    </div>
         <ul class="nav navbar-nav">
-            <li><a style="color: white;" href="/">Home</a></li>
-            <li class="active"><a style="color: white;" href="/saved">Saved Articles</a></li>
+            <li><a class="btn btn-danger scrape-new">CLEAR ARTICLES</a></li>
         </ul>
     </div>
 </nav>
@@ -15,7 +25,7 @@
     <div class="background-image">
     </div>
     <div class="caption">
-        <h1>Saved Articles</h1>
+        <h1>New York Times</h1>
         <p>Your Saved Articles</p>
     </div>
 </div>
@@ -24,7 +34,7 @@
 
 <footer class="footer">
     <div class="container">
-        <p>### #### #### Mongo Scraper</p>
+        <p>New York Times Mongo Scraper</p>
     </div>
 </footer>
 
