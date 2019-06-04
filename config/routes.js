@@ -19,7 +19,7 @@ module.exports = function(router) {
     router.get('/api/fetch', function(req, res){
         headlinesController.fetch(function(err, docs){
             if (!docs || docs.insertedCount === 0) { 
-               res.jason ({
+               res.json ({
                    message: "There are no new articles today. Please check again tomorrow!"
                }); 
             }
@@ -75,14 +75,14 @@ module.exports = function(router) {
         var query = {};
         query._id = req.params.id;
         notesController.delete(query, function(err, data){
-            res.jason(data);
+            res.json(data);
         });
     });
 
     //route to post new notes to articles
     router.post('api/notes', function(req, res){
         notesController.save(req.body, function(data){
-            res.jason(data);
+            res.json(data);
         });
     });
 }
