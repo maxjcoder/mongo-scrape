@@ -36,6 +36,8 @@ app.use(router);
 //use deployed db or the local mongoHeadlines db
 var db = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
 
+mongoose.connect(MONGODB_URI);
+
 //connect to db
 mongoose.connect(db, function(error) {
     //log errors
