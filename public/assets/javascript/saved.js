@@ -34,8 +34,8 @@ $(document).ready(function() {
   function createPanel(article) {
 
       var panel =
-      $(["<div class='panel panel-default'>",
-      "<div class='panel-heading'>",
+      $(["<div class='card'>",
+      "<div class='card-heading'>",
       "<h3>",
       article.headline,
       "<a class='btn btn-success delete'>",
@@ -44,7 +44,7 @@ $(document).ready(function() {
       "<a class='btn btn-info notes'>Article Notes</a>",
       "</h3>",
       "</div>",
-      "<div class='panel-body'>",
+      "<div class='card-body'>",
       article.summary,
       "</div>",
       "</div>"
@@ -61,11 +61,11 @@ $(document).ready(function() {
       $(["<div class='alert alert-warning text-center'>",
       "<h4>Uh Oh. Looks like we don't have any saved articles.</h4>",
       "</div>",
-      "<div class='panel panel-default'>",
-      "<div class='panel-heading text-center'>",
+      "<div class='card'>",
+      "<div class='card-heading text-center'>",
       "<h3> Would You Like To Browse Available Articles?</h3>",
       "</div>",
-      "<div class='panel-body text-center'>",
+      "<div class='card-body text-center'>",
       "<h4><a class='scrape-new'>Try Scraping New Articles</a></h4>",
       "<h4><a href='/saved'>Browse Articles</a></h4>",
       "</div>",
