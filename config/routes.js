@@ -31,7 +31,7 @@ module.exports = function(router) {
         });
     });
     // grab headlines in the db
-    router.get('/api/headlines', function(req, cb){
+    router.get('/api/headlines', function(req, res){
         var query = {};
         if (req.query.saved) {
             query = req.query;
