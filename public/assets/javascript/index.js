@@ -3,14 +3,15 @@ $(document).ready(function() {
   var articleContainer = $('.article-container');
   $(document).on('click', '.btn.save', handleArticleSave);
   $(document).on('click', '.scrape-new', handleArticleScrape);
+  $(".clear").on("click", handleArticleClear);
 
   initPage();
 
   function initPage() {
 
-      articleContainer.empty();
       $.get('api/headlines?saved=false')
           .then(function(data) {
+            articleContainer.empty();
               if (data && data.length) {
               } else {
               renderEmpty();
@@ -91,12 +92,18 @@ $(document).ready(function() {
   }
 
   function handleArticleScrape () {
-
       $.get("/api/fetch")
           .then(function(data) { 
-          
-              initPage();
-              bootbox.alert("<h3 class'text-cenetr m-top-80'>" + data.message + "<h3>");
-          });
+            initPage();
+            bootbox.alert("<h3 class'text-cenetr m-top-80'>" + data.message + "<h3>");
+        });
+    }
+
+  function handleArticleClear() {
+    $.get("api/clear").then(function() {
+      articleContainer.empty();
+      initPage();
+    });
   }
+  
 });

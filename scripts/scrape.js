@@ -1,16 +1,17 @@
 // this a script is to scrape articles
+//=====================================
 
-// need to require cheerio & request - makes scraping possible
-var request = require('request');
+// need to require cheerio & axios - makes scraping possible
+var axios = require('axios');
 var cheerio = require('cheerio');
 
 // variable to export
-var scrape = function (cb) {
+var scrape = function () {
 
     //request package to request NYT: account for error, response and body (for NYT requests)
-    request('http://www.nytimes.com', function(err, res, body){
+    return axios.get('http://www.nytimes.com').then(function(res){
 
-        var $ = cheerio.load(body);
+        var $ = cheerio.load(res.data);
 
         //empty array of articles
         var articles = [];
@@ -19,30 +20,40 @@ var scrape = function (cb) {
 
         // select a class and on each class, get the story heading and summary; trim cuts off white space
 
-            // --*unsure of the 'class' to use here* (perhaps 'story')--
-        $('.story').each(function(i, element){
+            // --*unsure of the 'class' to use here* (perhaps 'theme-summary')--
+        $('.theme-summary').each(function(i, element){
 
-                                        // --*unsure of the 'class' to use here* (perhaps 'balancedHeadline')--
-            var head = $(this).children('.balancedHeadline').text().trim();
-                                        // --*unsure of the 'class' to use here* (perhaps 'articleBody')--
-            var sum = $(this).children('.articleBody').text().trim();
+                                        // --*unsure of the 'class' to use here* (perhaps 'story-heading')--
+            var head = $(this)
+            .children('.story-heading')
+            .text()
+            .trim();
+                                        // --*unsure of the 'class' to use here* (perhaps 'story-heading')--
+            var url = $(this)
+            .children('.story-heading')
+            .children('a')
+            .attr('href');
+                                        // --*unsure of the 'class' to use here* (perhaps 'story-heading')--
+            var sum = $(this)
+            .children('.story-heading')
+            .text()
+            .trim();
 
-        // 'Replace Regex Method' to clean up text with white space
+        // 'Replace (Regex Method)' to clean up text with white space
         if(head && sum){
-            var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, '').trim();
-            var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, '').trim();
+            var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
+            var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
 
             var dataToAdd = {
                 headline: headNeat,
-                summary: sumNeat
+                summary: sumNeat,
+                url: url
             };
 
             articles.push(dataToAdd);
             }
         });
-
-        // callback function to send articles 
-        cb(articles);
+        return articles;
     });
 };
 

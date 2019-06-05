@@ -66,8 +66,7 @@ $(document).ready(function() {
       "<h3> Would You Like To Browse Available Articles?</h3>",
       "</div>",
       "<div class='card-body text-center'>",
-      "<h4><a class='scrape-new'>Try Scraping New Articles</a></h4>",
-      "<h4><a href='/saved'>Browse Articles</a></h4>",
+      "<h4><a href='/'>Browse Articles</a></h4>",
       "</div>",
       "</div>"
       ].join(""));
