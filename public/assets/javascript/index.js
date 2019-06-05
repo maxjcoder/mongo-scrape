@@ -65,7 +65,7 @@ $(document).ready(function() {
       "</div>",
       "<div class='card-body text-center'>",
       "<h4><a class='scrape-new'>Try Scraping New Articles</a></h4>",
-      "<h4><a href='/saved'>Try Scraping New Articles</a></h4>",
+      "<h4><a href='/saved'>Go To Saved Articles</a></h4>",
       "</div>",
       "</div>"
       ].join(""));
